@@ -33,7 +33,7 @@ request to merge.*
 - **Develop** - This branch contains the complete history of the project and serves
 as an integration branch for features. *Develop is a protected branch and
 requires a pull request to merge.*
-- Feature - Feature branches are split off of the latest Develop branch to build
+- **Feature** - Feature branches are split off of the latest Develop branch to build
 new features. Once complete, they are merged back into Develop.
 - **Release** - Once a certain amount of features have been completed, a Release
 branch is split off Develop. Once this branch is created, no new features are
@@ -45,3 +45,9 @@ into Main with a new version number and then Develop. (in some cases it might be
 merged into a Release branch)
 
 Citation: [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+### Other Notes:
+- Zlib Security Issue: The frontend is supported by an nginx image that according
+to the Trivy security scan has a critical flag related to the underlying Zlib.
+Switching to nginx:alpine3.20 had even more critical flags, and nginx:stable-alpine
+had the same Zlib flag, so I just stuck with nginx:alpine.
