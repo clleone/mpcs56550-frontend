@@ -2,5 +2,5 @@
 
 frontendPipeline(
     serviceName: 'frontend',
-    dockerhubUser: 'your-dockerhub-username'
+    dockerhubUser: 'clleone'
 )
