@@ -3,28 +3,66 @@
 This repository houses all code and configuration files related to the frontend
 of my ecommerce application.
 
+### Requirements
+- Node.js 18+
+- npm
+- Git
+
 ### Directory Structure
 ```text
-frontend/
+orders/
+|   .env
 |   .gitignore
+|   Dockerfile
+|   Jenkinsfile
+|   ngix.conf
+|   package.json
+|   package-lock.json
 |   README.md
 |
 +---k8s
-+---public
-|       index.html
+|   \---frontend
+|       +---dev
+|       |       configmap.yaml
+|       |       deployment.yaml
+|       |       service.yaml
+|       |
+|       +---prod
+|       |       configmap.yaml
+|       |       deployment.yaml
+|       |       service.yaml
+|       |
+|       \---staging
+|               configmap.yaml
+|               deployment.yaml
+|               service.yaml
 |
 +---src
-|       App.js
-|       index.js
+|   |   App.js
+|   \--- index.js
+|
++---public
+|   \--- index.html
 |
 \---tests
-        test_orders.py
 ```
 ### Instructions to build and run frontend locally:
-- Forthcoming
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/mpcs56550-frontend
+cd mpcs56550-frontend
+
+# Install dependencies
+npm install
+
+# Run the dev server
+npm start
+```
+App will be available at http://localhost:3000, but note that product and order
+services must be running for it to work.
 
 ### Testing:
-- Forthcoming
+- None at this time.
 
 ### GitFlow Overview:
 - **Main** - This branch stores the official release history. All commits here are 
