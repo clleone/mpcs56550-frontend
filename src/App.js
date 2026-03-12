@@ -9,19 +9,19 @@ function App() {
 
     useEffect(() => {
         // Fetch products
-        axios.get('http://localhost:5001/products')
+        axios.get('/api/products') // formerly 'http://localhost:5001/products'
             .then(res => setProducts(res.data))
             .catch(err => setError("Failed to load products. Please try again."));
     }, []);
 
     const createOrder = (product_id, total_price) => {
-        axios.post('http://localhost:5002/orders', {
+        axios.post('/api/orders', { // formerly 'http://localhost:5002/orders'
             product_id: product_id,
             quantity: 1,
             total_price: total_price
         })
             .then(res => {
-                alert('Order created!');
+                alert('Your order is underway.');
                 setOrders([...orders, res.data]);
             })
             .catch(err => console.error(err));
